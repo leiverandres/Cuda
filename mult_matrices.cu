@@ -35,7 +35,7 @@ void mostrar(int *v) {
   }
 }
 
-//Kuda function
+//Cuda function
 __global__ void mult_dist(int *d_A, int *d_B,int *d_C){
   int i = blockIdx.y*blockDim.y+threadIdx.y;//todos los valores columna
   int j = blockIdx.x*blockDim.x+threadIdx.x;//todos los valores fial
@@ -57,7 +57,7 @@ int main() {
   int *A = (int*)malloc(size);
   int *B = (int*)malloc(size);
   int *C = (int*)malloc(size);//resultado Normal
-  int *D = (int*)malloc(size);//resultado Kuda
+  int *D = (int*)malloc(size);//resultado Cuda
 
   llenar(A);
   llenar(B);
